@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+body
+{
+    background: url(img.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-position: center;
+
+}
+
+.section-box
+{
+    backdrop-filter: blur(3px);
+    background-color: transparent;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.822);
+    width: 420px;
+    padding: 40px;
+
+}
+.input-box
+{
+    margin: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-box input
+{
+    border-radius:17px ;
+    width: 280px;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.534);
+    color: white;
+}
+.input-box input::placeholder
+{
+    color: rgba(255, 255, 255, 0.925);
+
+}
+
+.section-box h1
+{
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.send-btn
+{
+   width: 100%;
+   border-radius: 20px;
+   padding: 10px;
+   transition: 0.5s;    
+}
+.send-btn:hover
+{
+    backdrop-filter: blur(2px);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgba(255, 255, 255, 0.767);
+    
+}
