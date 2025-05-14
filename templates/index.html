@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bot Vinted</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <section class="section-box">
+        <h1>Bot Settings</h1>
+        <div class="input-box">
+            <input type="text" id="refresh" placeholder="Refresh_token_web">
+        </div>
+        <div class="input-box">
+            <input type="text" id="access" placeholder="Access_token_web">
+        </div>
+        <div class="input-box">
+            <input type="text" id="webhook" placeholder="Discord Webhook">
+        </div>
+        <div class="input-box">
+            <input type="text" id="search" placeholder="Recherche Vinted (ex: Air Force 1)">
+        </div>
+        <button onclick="lancerScript()">Lancer le script</button>
+    </section>
+
+    <script>
+        function lancerScript() {
+            const data = {
+                refresh_token: document.getElementById('refresh').value,
+                access_token: document.getElementById('access').value,
+                webhook: document.getElementById('webhook').value,
+                search: document.getElementById('search').value
+            };
+
+            fetch('/run-script', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => alert("Erreur : " + error));
+        }
+    </script>
+</body>
+</html>
